@@ -28,15 +28,15 @@ export default class List {
     this.size++;
   }
 
-  size() {
+  getSize() {
     return this.size;
   }
 
-  head() {
+  getHead() {
     return this.head;
   }
 
-  tail() {
+  getTail() {
     return this.tail;
   }
 
@@ -44,29 +44,32 @@ export default class List {
     if (this.head === null) {
       console.log("This list is empty");
     }
+    if (index >= this.size) {
+      console.log("The index is too large");
+      return;
+    }
 
     let current = this.head;
     let currentIndex = 0;
     while (currentIndex < index) {
-      if (current === null) {
-        console.log("This index is too large");
-        return;
-      }
-
       current = current.nextNode;
       currentIndex++;
     }
 
-    if (current === null) {
-      console.log("This index is too large");
-      return null;
-    } else {
-      return current;
-    }
+    return current;
   }
 
   pop() {
     //TODO
+    let current = this.head;
+
+    while (current.nextNode != this.tail) {
+      current = current.nextNode;
+    }
+
+    this.tail = current;
+    this.tail.nextNode = null;
+    this.size--;
   }
 
   contains(value) {
