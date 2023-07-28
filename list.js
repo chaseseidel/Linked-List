@@ -1,4 +1,4 @@
-import Node from "./node";
+import Node from "./node.js";
 
 export default class List {
   constructor() {
@@ -8,7 +8,13 @@ export default class List {
   }
 
   append(value) {
-    //TODO
+    if (this.tail === null) {
+      this.head = this.tail = new Node(value);
+    } else {
+      this.tail.nextNode = new Node(value);
+      this.tail = this.tail.nextNode;
+    }
+    this.size++;
   }
 
   prepend(value) {
