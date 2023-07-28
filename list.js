@@ -78,7 +78,15 @@ export default class List {
   contains(value) {
     let current = this.head;
 
-    while (current != null) {}
+    while (current != null) {
+      if (current.value === value) {
+        return true;
+      } else {
+        current = current.nextNode;
+      }
+    }
+
+    return false;
   }
 
   find(value) {
