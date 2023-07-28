@@ -141,6 +141,20 @@ export default class List {
   }
 
   removeAt(index) {
-    //TODO
+    if (index >= this.size) {
+      console.log("The index is too large");
+      return;
+    }
+
+    let current = this.head;
+    let currentIndex = 0;
+
+    while (currentIndex < index - 1) {
+      current = current.nextNode;
+      currentIndex++;
+    }
+
+    current.nextNode = current.nextNode.nextNode;
+    this.size--;
   }
 }
