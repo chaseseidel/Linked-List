@@ -38,7 +38,14 @@ export default class List {
   }
 
   toString() {
-    //TODO
+    let current = this.head;
+    let string = '';
+    while (current != null) {
+        string += `( ${current.value} ) -> `;
+        current = current.nextNode;
+    }
+    string += 'null';
+    console.log(string);
   }
 
   insertAt(value, index) {
