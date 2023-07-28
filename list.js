@@ -121,7 +121,23 @@ export default class List {
   }
 
   insertAt(value, index) {
-    //TODO
+    if (index > this.size) {
+      console.log("The index is too large");
+      return;
+    }
+
+    let current = this.head;
+    let currentIndex = 0;
+
+    while (currentIndex < index - 1) {
+      current = current.nextNode;
+      currentIndex++;
+    }
+
+    let currentNext = current.nextNode;
+    current.nextNode = new Node(value);
+    current.nextNode.nextNode = currentNext;
+    this.size++;
   }
 
   removeAt(index) {
