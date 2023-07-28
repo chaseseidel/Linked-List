@@ -28,6 +28,18 @@ export default class List {
     this.size++;
   }
 
+  size() {
+    return this.size;
+  }
+
+  head() {
+    return this.head;
+  }
+
+  tail() {
+    return this.tail;
+  }
+
   at(index) {
     //TODO
   }
