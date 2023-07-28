@@ -60,7 +60,10 @@ export default class List {
   }
 
   pop() {
-    //TODO
+    if (this.head === null) {
+      return;
+    }
+
     let current = this.head;
 
     while (current.nextNode != this.tail) {
@@ -73,7 +76,9 @@ export default class List {
   }
 
   contains(value) {
-    //TODO
+    let current = this.head;
+
+    while (current != null) {}
   }
 
   find(value) {
