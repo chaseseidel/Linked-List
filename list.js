@@ -18,7 +18,14 @@ export default class List {
   }
 
   prepend(value) {
-    //TODO
+    if (this.head === null) {
+      this.head = this.tail = new Node(value);
+    } else {
+      const nodeToAdd = new Node(value);
+      nodeToAdd.nextNode = this.head;
+      this.head = nodeToAdd;
+    }
+    this.size++;
   }
 
   at(index) {
@@ -39,12 +46,12 @@ export default class List {
 
   toString() {
     let current = this.head;
-    let string = '';
+    let string = "";
     while (current != null) {
-        string += `( ${current.value} ) -> `;
-        current = current.nextNode;
+      string += `( ${current.value} ) -> `;
+      current = current.nextNode;
     }
-    string += 'null';
+    string += "null";
     console.log(string);
   }
 
