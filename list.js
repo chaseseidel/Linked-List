@@ -41,7 +41,28 @@ export default class List {
   }
 
   at(index) {
-    //TODO
+    if (this.head === null) {
+      console.log("This list is empty");
+    }
+
+    let current = this.head;
+    let currentIndex = 0;
+    while (currentIndex < index) {
+      if (current === null) {
+        console.log("This index is too large");
+        return;
+      }
+
+      current = current.nextNode;
+      currentIndex++;
+    }
+
+    if (current === null) {
+      console.log("This index is too large");
+      return null;
+    } else {
+      return current;
+    }
   }
 
   pop() {
