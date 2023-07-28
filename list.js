@@ -90,7 +90,23 @@ export default class List {
   }
 
   find(value) {
-    //TODO
+    if (this.head === null) {
+      return null;
+    }
+
+    let current = this.head;
+    let index = 0;
+
+    while (current != null) {
+      if (current.value === value) {
+        return index;
+      } else {
+        current = current.nextNode;
+        index++;
+      }
+    }
+
+    return null;
   }
 
   toString() {
